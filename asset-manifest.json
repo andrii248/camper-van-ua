@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/camper-van-ua/static/css/main.7acaea2f.css",
+    "main.js": "/camper-van-ua/static/js/main.07d3183d.js",
+    "index.html": "/camper-van-ua/index.html",
+    "main.7acaea2f.css.map": "/camper-van-ua/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/camper-van-ua/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
