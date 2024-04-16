@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcamper_van_ua=self.webpackChunkcamper_van_ua||[]).push([[270],{270:function(a,e,n){n.r(e);var u=n(184);e.default=function(){return(0,u.jsx)("main",{children:(0,u.jsx)("h1",{children:"CatalogPage"})})}}}]);
+//# sourceMappingURL=270.46168ee9.chunk.js.map
