@@ -8,6 +8,7 @@ const initialState = {
     : [],
   isLoading: false,
   error: null,
+  page: 1,
 };
 
 const handleFulfilled = state => {
@@ -15,7 +16,9 @@ const handleFulfilled = state => {
   state.isLoading = false;
 };
 
-const loadingActive = state => (state.isLoading = true);
+const loadingActive = state => {
+  state.isLoading = true;
+};
 
 const handleError = (state, { payload }) => {
   state.isLoading = false;
@@ -56,6 +59,10 @@ const campersSlice = createSlice({
         JSON.stringify(state.favoriteItems)
       );
     },
+
+    setPage: (state, action) => {
+      state.page = action.payload;
+    },
   },
 
   extraReducers: builder => {
@@ -72,7 +79,7 @@ const campersSlice = createSlice({
   },
 });
 
-export const { addToFavoriteList, removeFromFavoriteList } =
+export const { addToFavoriteList, removeFromFavoriteList, setPage } =
   campersSlice.actions;
 
 export const camperReducer = campersSlice.reducer;
