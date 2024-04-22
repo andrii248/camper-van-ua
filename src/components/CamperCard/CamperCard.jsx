@@ -1,6 +1,9 @@
 import formatPriceToEuro from 'helpers/formatPriceToEuro';
 import css from './CamperCard.module.css';
 import { useState } from 'react';
+import sprite from '../../images/sprite.svg';
+import CamperDetails from 'components/CamperDetails/CamperDetails';
+import Button from 'components/Button/Button';
 
 const CamperCard = ({
   _id,
@@ -8,9 +11,13 @@ const CamperCard = ({
   name,
   price,
   rating,
+  reviews,
   location,
+  adults,
+  engine,
+  transmission,
   description,
-  details,
+  details: { kitchen, beds, airConditioner },
 }) => {
   const [favorite, setFavorite] = useState(false);
 
@@ -30,22 +37,40 @@ const CamperCard = ({
             onClick={() => setFavorite(prev => !prev)}
           ></button>
         </div>
+
         <div className={css.cardContainer}>
-          <p>Reviews: {rating}</p>
-          <p>Location: {location}</p>
+          <div className={css.cardReviews}>
+            <svg width={16} height={16}>
+              <use href={`${sprite}#icon-star`} />
+            </svg>
+            <span>{`${rating}(${reviews} Reviews)`}</span>
+          </div>
+
+          <div className={css.cardLocation}>
+            <svg width={16} height={16}>
+              <use href={`${sprite}#icon-pin`} />
+            </svg>
+            <span>{location.split(', ').reverse().join(', ')}</span>
+          </div>
         </div>
+
         <div className={css.cardDescription}>
           <p>{description}</p>
         </div>
 
-        <div className={css.cardFeatures}>
-          <ul>
-            {details.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-        </div>
-        <button className="show-more-button">Show More</button>
+        <CamperDetails
+          details={{
+            adults,
+            engine,
+            transmission,
+            description,
+            kitchen,
+            beds,
+            AC: airConditioner,
+          }}
+        ></CamperDetails>
+
+        <Button text={'Show more'} />
       </div>
     </li>
   );

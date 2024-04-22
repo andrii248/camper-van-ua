@@ -1,37 +1,12 @@
 import CamperCard from 'components/CamperCard/CamperCard';
 import css from './CamperList.module.css';
-import { useSelector } from 'react-redux';
-import { selectCampers } from '../../redux/selectors';
 
-const CamperList = () => {
-  const campers = useSelector(selectCampers);
-
+const CamperList = ({ campers }) => {
   return (
-    <ul className={css.list}>
-      {campers.map(
-        ({
-          _id,
-          gallery,
-          name,
-          price,
-          rating,
-          location,
-          description,
-          details,
-        }) => (
-          <CamperCard
-            key={_id}
-            id={_id}
-            gallery={gallery}
-            name={name}
-            price={price}
-            rating={rating}
-            location={location}
-            description={description}
-            details={details}
-          />
-        )
-      )}
+    <ul className={css.CardList}>
+      {campers.map(camper => (
+        <CamperCard key={camper._id} {...camper} />
+      ))}
     </ul>
   );
 };
