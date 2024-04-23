@@ -13,7 +13,7 @@
 
 body {
   margin: 0;
-  --font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 150%;
   -webkit-font-smoothing: antialiased;
@@ -23,4 +23,58 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* reset */
+html,
+body,
+div,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+li,
+a,
+div,
+nav {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+
+  &.dark {
+    background-color: #171717;
+  }
+}
+
+svg {
+  fill: currentColor;
+}
+
+.hidden {
+  display: none;
 }

@@ -1,10 +1,10 @@
-detailsList {
+.detailsList {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-detailsItem {
+.detailsItem {
   display: flex;
   gap: 8px;
   border-radius: 100px;

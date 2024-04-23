@@ -30,20 +30,36 @@ const CamperCard = ({
       <div className={css.cardData}>
         <div className={css.cardHeader}>
           <h2 className={css.cardTitle}>{name}</h2>
-          <div className={css.cardTitle}>{formatPriceToEuro(price)}</div>
-          <button
-            type="button"
-            className={`${css.favorite} ${favorite && css.checked}`}
-            onClick={() => setFavorite(prev => !prev)}
-          ></button>
+
+          <div className={css.priceWrapper}>
+            <div className={`${css.cardTitle} ${css.price}`}>
+              {formatPriceToEuro(price)}
+            </div>
+            <button
+              type="button"
+              className={`${css.favoriteBtn}`}
+              //  ${favorite && css.checked}
+              onClick={() => setFavorite(prev => !prev)}
+            >
+              {!favorite ? (
+                <svg width={24} height={24}>
+                  <use href={sprite + '#icon-heart'} />
+                </svg>
+              ) : (
+                <svg width={24} height={24} className={css.favor}>
+                  <use href={sprite + '#icon-heart-favor'} />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         <div className={css.cardContainer}>
           <div className={css.cardReviews}>
             <svg width={16} height={16}>
-              <use href={`${sprite}#icon-star`} />
+              <use href={`${sprite}#icon-rating`} />
             </svg>
-            <span>{`${rating}(${reviews} Reviews)`}</span>
+            <span>{`${rating}(${reviews.length} Reviews)`}</span>
           </div>
 
           <div className={css.cardLocation}>
@@ -54,8 +70,8 @@ const CamperCard = ({
           </div>
         </div>
 
-        <div className={css.cardDescription}>
-          <p>{description}</p>
+        <div>
+          <p className={css.cardDescription}>{description}</p>
         </div>
 
         <CamperDetails
@@ -63,7 +79,6 @@ const CamperCard = ({
             adults,
             engine,
             transmission,
-            description,
             kitchen,
             beds,
             AC: airConditioner,

@@ -14,7 +14,8 @@ const CamperDetails = ({ details }) => {
         } else if (COUNTABLE_VALUES.includes(key)) {
           innerText = `${value} ${key}`;
         } else {
-          return null;
+          if (!value) return null;
+          innerText = key[0].toLocaleUpperCase() + key.slice(1);
         }
 
         return (
