@@ -18,8 +18,14 @@ const CamperCard = ({
   transmission,
   description,
   details: { kitchen, beds, airConditioner },
+  showMoreClick,
 }) => {
+  // const dispatch = useDispatch()
   const [favorite, setFavorite] = useState(false);
+
+  const handleShowMore = () => {
+    showMoreClick(_id);
+  };
 
   return (
     <li className={css.card} id={_id}>
@@ -85,7 +91,7 @@ const CamperCard = ({
           }}
         ></CamperDetails>
 
-        <Button text={'Show more'} />
+        <Button text={'Show more'} onClick={handleShowMore} />
       </div>
     </li>
   );

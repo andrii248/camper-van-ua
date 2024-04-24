@@ -9,6 +9,7 @@ const initialState = {
   isLoading: false,
   error: null,
   page: 1,
+  camperById: null,
 };
 
 const handleFulfilled = state => {
@@ -72,10 +73,14 @@ const campersSlice = createSlice({
       .addCase(getCampers.fulfilled, (state, { payload }) => {
         handleFulfilled(state);
         state.items = payload;
+        // state.items.push(payload);
       })
       .addCase(getCamperById.pending, loadingActive)
-      .addCase(getCamperById.rejected, handleError);
-    //   .addCase(getCamperById.fulfilled);
+      .addCase(getCamperById.rejected, handleError)
+      .addCase(getCamperById.fulfilled, (state, { payload }) => {
+        handleFulfilled(state);
+        state.camperById = payload;
+      });
   },
 });
 
