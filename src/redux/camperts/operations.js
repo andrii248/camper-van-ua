@@ -5,7 +5,7 @@ export const getCampers = createAsyncThunk(
   'campers/getCampers',
   async (page = 1, thunkAPI) => {
     try {
-      const response = await campersAPI('/', {
+      const response = await campersAPI(`/?page=${page}&limit=4`, {
         params: {
           page,
         },

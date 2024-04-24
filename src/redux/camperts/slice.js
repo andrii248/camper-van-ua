@@ -72,8 +72,8 @@ const campersSlice = createSlice({
       .addCase(getCampers.rejected, handleError)
       .addCase(getCampers.fulfilled, (state, { payload }) => {
         handleFulfilled(state);
-        state.items = payload;
-        // state.items.push(payload);
+        // state.items = payload;
+        state.items.push(payload);
       })
       .addCase(getCamperById.pending, loadingActive)
       .addCase(getCamperById.rejected, handleError)
