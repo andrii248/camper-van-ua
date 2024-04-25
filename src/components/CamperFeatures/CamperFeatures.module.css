@@ -1,0 +1,52 @@
+.containerModal {
+  border-radius: 20px;
+  padding: 40px;
+  width: 982px;
+  height: 720px;
+  overflow: auto;
+  max-height: 90vh;
+
+  background-color: #fff;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.camperTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 125%;
+}
+
+.cross {
+  border-radius: 50%;
+  border: 0 transparent;
+  background-color: transparent;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.cross:hover,
+.cross:focus {
+  transform: scale(1.1);
+  background-color: #e6e6e6;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.cardReviews,
+.cardLocation {
+  display: flex;
+  align-items: center;
+}
+
+.cardReviews {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
