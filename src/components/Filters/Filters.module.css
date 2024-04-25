@@ -1,0 +1,7 @@
+.filterWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  width: 360px;
+}
