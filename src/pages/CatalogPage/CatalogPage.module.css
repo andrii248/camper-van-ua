@@ -1,3 +1,9 @@
 .catalogWrapper {
   display: flex;
+  gap: 64px;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+  max-width: 100%;
 }

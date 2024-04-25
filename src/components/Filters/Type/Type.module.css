@@ -1,0 +1,34 @@
+.vanTypes {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.vanTypeItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 17px 27px;
+  width: 112px;
+
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+.vanTypeItem:hover,
+.vanTypeItem:focus {
+  transform: scale(1.1);
+}
+
+.typeText {
+  font-weight: 500;
+  line-height: 125%;
+  text-align: center;
+  color: var(--main);
+
+  margin-top: 8px;
+}

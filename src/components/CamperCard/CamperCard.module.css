@@ -57,7 +57,7 @@
   background-color: transparent;
   padding: 0;
   color: var(--main);
-  transition: color ease, transform ease;
+  transition: color 0.5s ease, transform 0.5s ease;
 }
 
 .favoriteBtn:hover,
