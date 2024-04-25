@@ -10,6 +10,7 @@ const initialState = {
   error: null,
   page: 1,
   camperById: null,
+  loadMoreAvailable: true,
 };
 
 const handleFulfilled = state => {
@@ -72,8 +73,9 @@ const campersSlice = createSlice({
       .addCase(getCampers.rejected, handleError)
       .addCase(getCampers.fulfilled, (state, { payload }) => {
         handleFulfilled(state);
-        // state.items = payload;
-        state.items.push(payload);
+        console.log(payload);
+        state.items = [...state.items, ...payload];
+        // state.items.push(...payload);
       })
       .addCase(getCamperById.pending, loadingActive)
       .addCase(getCamperById.rejected, handleError)

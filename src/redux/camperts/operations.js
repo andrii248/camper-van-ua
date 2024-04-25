@@ -5,11 +5,11 @@ export const getCampers = createAsyncThunk(
   'campers/getCampers',
   async (page = 1, thunkAPI) => {
     try {
-      const response = await campersAPI(`/?page=${page}&limit=4`, {
-        params: {
-          page,
-        },
-      });
+      const response = await campersAPI(`?page=${page}&limit=4`); //   {
+      //   params: {
+      //     page,
+      //   },
+      // });
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCampers } from '../../redux/camperts/operations';
-import { selectCampers, selectIsLoading } from '../../redux/selectors';
+import {
+  selectCampers,
+  selectIsLoading,
+  selectLoadMore,
+  selectPage,
+} from '../../redux/selectors';
 import css from './CatalogPage.module.css';
 import Loader from 'components/Loader/Loader';
 import CamperList from 'components/CamperList/CamperList';
 import Button from 'components/Button/Button';
 import Modal from 'components/Modal/Modal';
 import CamperFeatures from 'components/CamperFeatures/CamperFeatures';
+import { setPage } from '../../redux/camperts/slice';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -15,12 +21,13 @@ const CatalogPage = () => {
   const [showCamper, setShowCamper] = useState(null);
   // const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
-  // const page = useSelector(selectPage);
+  const page = useSelector(selectPage);
   const campers = useSelector(selectCampers);
+  const isLoadMoreAvailable = useSelector(selectLoadMore);
 
   useEffect(() => {
-    dispatch(getCampers());
-  }, [dispatch]);
+    dispatch(getCampers(page));
+  }, [dispatch, page]);
 
   const toggleModal = () => {
     setShowModal(prev => !prev);
@@ -29,6 +36,10 @@ const CatalogPage = () => {
   const handleShowMore = _id => {
     setShowCamper(_id);
     toggleModal();
+  };
+
+  const handleLoadMoreClick = () => {
+    dispatch(setPage(page + 1));
   };
 
   return (
@@ -45,7 +56,13 @@ const CatalogPage = () => {
           <CamperList campers={campers} showMoreClick={handleShowMore} />
         )}
       </div>
-      {!isLoading && <Button text={'Load more'} />}
+      {!isLoading && isLoadMoreAvailable && (
+        <Button
+          className={css.loadMoreBtn}
+          text={'Load more'}
+          onClick={handleLoadMoreClick}
+        />
+      )}
     </div>
   );
 };
