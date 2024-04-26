@@ -6,6 +6,7 @@ import { selectCamperByID } from '../../redux/selectors';
 import sprite from '../../images/sprite.svg';
 import formatPriceToEuro from 'helpers/formatPriceToEuro';
 import Features from 'components/Features/Features';
+import Form from 'components/Form/Form';
 
 const CamperFeatures = ({ id, onClick }) => {
   const dispatch = useDispatch();
@@ -93,7 +94,12 @@ const CamperFeatures = ({ id, onClick }) => {
       </div>
 
       <div className={css.pageContentWrapper}>
-        {activeTab === 'features' && camper && <Features data={camper} />}
+        {activeTab === 'features' && camper && (
+          <>
+            <Features data={camper} />
+            <Form />
+          </>
+        )}
       </div>
     </div>
   );

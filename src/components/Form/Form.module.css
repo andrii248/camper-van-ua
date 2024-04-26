@@ -1,0 +1,57 @@
+.form {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+  padding: 24px;
+  width: 448px;
+  height: 532px;
+  box-sizing: border-box;
+}
+
+.formTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.formText {
+  color: #475467;
+  margin-bottom: 24px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.inputWrapper > input,
+.inputWrapper textarea {
+  border-radius: 10px;
+  border: none;
+  padding: 18px;
+  width: 100%;
+  max-width: 400px;
+  height: 56px;
+  background-color: var(--inputs);
+  line-height: 1.25;
+  outline: none;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: rgba(16, 24, 40, 0.6);
+}
+
+.inputWrapper textarea {
+  height: 114px;
+  resize: none;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  line-height: 1.25;
+  color: rgba(16, 24, 40, 0.6);
+}

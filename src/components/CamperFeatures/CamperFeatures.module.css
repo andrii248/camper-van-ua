@@ -118,6 +118,11 @@
   background-color: var(--button);
 }
 
+.pageContentWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
