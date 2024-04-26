@@ -1,6 +1,6 @@
 .card {
   display: flex;
-  /* flex-direction: column; */
+
   gap: 24px;
   width: 888px;
   height: 358px;
@@ -73,7 +73,6 @@
 .cardContainer {
   display: flex;
   gap: 16px;
-  /* margin-bottom: 24px; */
 }
 
 .cardReviews,
@@ -93,27 +92,3 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-/* .favoriteBtn {
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  color: var(--main);
-  transition: color ease, transform ease;
-}
-
-.favoriteBtn:hover,
-.favoriteBtn:active {
-  color: var(--button-hover);
-  transform: scale(1.1);
-}
-
-.favor {
-  opacity: 0;
-  color: var(--button);
-  transition: opacity ease;
-}
-
-.favoriteBtn.checked > .favor {
-  opacity: 1;
-} */

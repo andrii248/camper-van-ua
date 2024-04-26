@@ -20,7 +20,7 @@ const CamperCard = ({
   details: { kitchen, beds, airConditioner },
   showMoreClick,
 }) => {
-  // const dispatch = useDispatch()
+
   const [favorite, setFavorite] = useState(false);
 
   const handleShowMore = () => {

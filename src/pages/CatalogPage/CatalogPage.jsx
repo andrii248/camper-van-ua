@@ -10,7 +10,7 @@ import {
 import css from './CatalogPage.module.css';
 import Loader from 'components/Loader/Loader';
 import CamperList from 'components/CamperList/CamperList';
-import Button from 'components/Button/Button';
+
 import Modal from 'components/Modal/Modal';
 import CamperFeatures from 'components/CamperFeatures/CamperFeatures';
 import { setPage } from '../../redux/camperts/slice';
@@ -20,7 +20,7 @@ const CatalogPage = () => {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
   const [showCamper, setShowCamper] = useState(null);
-  // const error = useSelector(selectError);
+
   const isLoading = useSelector(selectIsLoading);
   const page = useSelector(selectPage);
   const campers = useSelector(selectCampers);
@@ -61,11 +61,9 @@ const CatalogPage = () => {
         )}
 
         {!isLoading && isLoadMoreAvailable && (
-          <Button
-            className={css.loadMoreBtn}
-            text={'Load more'}
-            onClick={handleLoadMoreClick}
-          />
+          <button className={css.loadMoreBtn} onClick={handleLoadMoreClick}>
+            Load more
+          </button>
         )}
       </div>
     </div>

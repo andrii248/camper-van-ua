@@ -1,0 +1,6 @@
+.ratingWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 16px;
+}

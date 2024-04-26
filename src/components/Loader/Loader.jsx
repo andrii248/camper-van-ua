@@ -10,10 +10,10 @@ class Loader extends Component {
         <CirclesWithBar
           height="100"
           width="100"
-          color="#20CCE2"
-          outerCircleColor="#20CCE2"
-          innerCircleColor="#20CCE2"
-          barColor="#20CCE2"
+          color="#E44848"
+          outerCircleColor="#E44848"
+          innerCircleColor="#E44848"
+          barColor="#E44848"
           ariaLabel="circles-with-bar-loading"
           wrapperStyle={{}}
           wrapperClass=""

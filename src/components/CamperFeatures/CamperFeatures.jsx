@@ -7,6 +7,7 @@ import sprite from '../../images/sprite.svg';
 import formatPriceToEuro from 'helpers/formatPriceToEuro';
 import Features from 'components/Features/Features';
 import Form from 'components/Form/Form';
+import ReviewsList from 'components/Reviews/ReviewsList';
 
 const CamperFeatures = ({ id, onClick }) => {
   const dispatch = useDispatch();
@@ -97,6 +98,12 @@ const CamperFeatures = ({ id, onClick }) => {
         {activeTab === 'features' && camper && (
           <>
             <Features data={camper} />
+            <Form />
+          </>
+        )}
+        {activeTab === 'reviews' && camper && (
+          <>
+            <ReviewsList data={camper?.reviews} />
             <Form />
           </>
         )}
