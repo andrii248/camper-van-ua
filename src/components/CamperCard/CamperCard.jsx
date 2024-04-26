@@ -44,7 +44,6 @@ const CamperCard = ({
             <button
               type="button"
               className={`${css.favoriteBtn}`}
-              //  ${favorite && css.checked}
               onClick={() => setFavorite(prev => !prev)}
             >
               {!favorite ? (

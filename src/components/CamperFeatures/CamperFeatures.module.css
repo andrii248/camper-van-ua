@@ -4,6 +4,7 @@
   width: 982px;
   height: 720px;
   overflow: auto;
+  box-sizing: border-box;
   max-height: 90vh;
 
   background-color: #fff;
@@ -38,6 +39,7 @@
 .cardContainer {
   display: flex;
   gap: 16px;
+  margin-bottom: 16px;
 }
 
 .cardReviews,
@@ -49,4 +51,94 @@
 .cardReviews {
   text-decoration: underline;
   text-decoration-skip-ink: none;
+}
+
+.camperGallery {
+  display: flex;
+  flex-wrap: nowrap;
+  /* gap: 16px; */
+  justify-content: space-between;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.imageContainer {
+  width: 290px;
+  height: 310px;
+  overflow: hidden;
+}
+
+.camperImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: 60%;
+}
+
+.pagesWrapper {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+
+  margin-bottom: 44px;
+  margin-top: 44px;
+  padding-bottom: 24px;
+}
+
+.pageButton {
+  position: relative;
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  width: auto;
+
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+
+  transition: color 0.5s ease;
+}
+
+.pageButton:hover,
+.pageButton:focus {
+  color: var(--button);
+}
+
+.active:after {
+  position: absolute;
+  bottom: -27px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 5px;
+
+  background-color: var(--button);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-moz-scrollbar {
+  width: 6px;
+}
+
+::-ms-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
