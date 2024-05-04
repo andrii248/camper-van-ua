@@ -5,26 +5,6 @@ const Form = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const bookingDate = e.target.date.value;
-
-    const namePattern = /^[A-Za-z\s]+$/;
-    if (!namePattern.test(name)) {
-      alert('Please enter letters and spaces only for the name field');
-      return;
-    }
-
-    if (!email.includes('@')) {
-      alert('Please enter a valid email address');
-      return;
-    }
-
-    if (!bookingDate) {
-      alert('Please select a booking date');
-      return;
-    }
-
     window.location.reload();
   };
 
@@ -34,7 +14,7 @@ const Form = () => {
       <p className={css.formText}>
         Stay connected! We are always ready to help you.
       </p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className={css.inputWrapper}>
           <input
             className={css.formInput}
@@ -74,7 +54,7 @@ const Form = () => {
           ></textarea>
         </div>
 
-        <Button text={'Send'} type="submit" onClick={handleSubmit} />
+        <Button text={'Send'} type="submit" />
       </form>
     </div>
   );
