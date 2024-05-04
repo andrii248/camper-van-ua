@@ -25,8 +25,6 @@ const Features = ({ data }) => {
   };
 
   const detailEntries = Object.entries(campDetails);
-  //   const featuresList = Object.entries(data.features);
-  //   const detailsList = Object.entries(data.details);
 
   return (
     <div className={css.featuresWrapper}>

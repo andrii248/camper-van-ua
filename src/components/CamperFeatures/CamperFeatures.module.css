@@ -56,7 +56,7 @@
 .camperGallery {
   display: flex;
   flex-wrap: nowrap;
-  /* gap: 16px; */
+
   justify-content: space-between;
   margin-bottom: 24px;
   margin-top: 24px;

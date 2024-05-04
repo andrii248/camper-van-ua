@@ -25,7 +25,6 @@ code {
     monospace;
 }
 
-/* reset */
 html,
 body,
 div,
@@ -77,4 +76,8 @@ svg {
 
 .hidden {
   display: none;
+}
+
+button {
+  cursor: pointer;
 }

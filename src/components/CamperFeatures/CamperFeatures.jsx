@@ -18,7 +18,6 @@ const CamperFeatures = ({ id, onClick }) => {
   }, [id, dispatch]);
 
   const camper = useSelector(selectCamperByID);
-  console.log(camper);
 
   const handleTabChange = tab => {
     setActiveTab(tab);

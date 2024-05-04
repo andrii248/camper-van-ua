@@ -23,6 +23,7 @@
   padding-right: 10px;
 }
 
+.nav a:hover,
 .nav a:hover {
   transform: scale(1.05);
 }

@@ -29,6 +29,7 @@
   transition: background-color 0.3s ease;
 }
 
-.link:hover {
+.link:hover,
+.link:active {
   background-color: #da6a6a;
 }
