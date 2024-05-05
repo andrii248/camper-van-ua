@@ -54,11 +54,11 @@ const CatalogPage = () => {
       <div className={css.Catalog}>
         <h1 className="hidden">Catalog Page</h1>
 
-        {isLoading && <Loader />}
-
-        {!isLoading && (
+        {campers && (
           <CamperList campers={campers} showMoreClick={handleShowMore} />
         )}
+
+        {isLoading && <Loader />}
 
         {!isLoading && isLoadMoreAvailable && (
           <button className={css.loadMoreBtn} onClick={handleLoadMoreClick}>
