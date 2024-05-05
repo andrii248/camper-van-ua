@@ -14,9 +14,11 @@ const Modal = ({ onClose, children }) => {
     };
 
     window.addEventListener('keydown', handelKeyUp);
+    document.documentElement.style.overflow = 'hidden';
 
     return () => {
       window.removeEventListener('keydown', handelKeyUp);
+      document.documentElement.style.overflow = 'auto';
     };
   }, [onClose]);
 
