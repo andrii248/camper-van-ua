@@ -1,16 +1,35 @@
 import { camperReducer } from './camperts/slice';
-import { filterReducer } from './filter/slice';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import { favoritesReducer } from './favorites/slice';
 
-const rootReducer = combineReducers({
-  campers: camperReducer,
-  filter: filterReducer,
-});
+const favoritesPersistConfig = {
+  key: 'favorites',
+  storage,
+  whiteList: ['campers'],
+};
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    campers: camperReducer,
+    favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
+  },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-      serializableCheck: false,
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
     }),
 });
+
+export const persistor = persistStore(store);

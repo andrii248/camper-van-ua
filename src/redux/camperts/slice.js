@@ -3,9 +3,6 @@ import { getCamperById, getCampers } from './operations';
 
 const initialState = {
   items: [],
-  favoriteItems: localStorage.getItem('favoriteItemsList')
-    ? JSON.parse(localStorage.getItem('favoriteItemsList'))
-    : [],
   isLoading: false,
   error: null,
   page: 1,
@@ -32,36 +29,6 @@ const campersSlice = createSlice({
   initialState,
 
   reducers: {
-    addToFavoriteList: (state, action) => {
-      const favoriteCampIndex = state.favoriteItems.findIndex(
-        item => item?.id === action.payload?.id
-      );
-
-      if (favoriteCampIndex >= 0) {
-        alert('The item is already added to your favorites');
-      } else {
-        const favorItems = { ...action.payload };
-        state.favoriteItems.push(favorItems);
-        localStorage.setItem(
-          'favoriteItemsList',
-          JSON.stringify(state.favoriteItems)
-        );
-      }
-    },
-
-    removeFromFavoriteList: (state, action) => {
-      const updateFavoriteList = state.favoriteItems?.filter(
-        item => item?.id !== action.payload?.id
-      );
-
-      state.favoriteItems = updateFavoriteList;
-
-      localStorage.setItem(
-        'favoriteItemsList',
-        JSON.stringify(state.favoriteItems)
-      );
-    },
-
     setPage: (state, action) => {
       state.page = action.payload;
     },
@@ -84,7 +51,6 @@ const campersSlice = createSlice({
   },
 });
 
-export const { addToFavoriteList, removeFromFavoriteList, setPage } =
-  campersSlice.actions;
+export const { setPage } = campersSlice.actions;
 
 export const camperReducer = campersSlice.reducer;

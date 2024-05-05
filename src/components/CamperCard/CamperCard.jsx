@@ -4,6 +4,11 @@ import { useState } from 'react';
 import sprite from '../../images/sprite.svg';
 import CamperDetails from 'components/CamperDetails/CamperDetails';
 import Button from 'components/Button/Button';
+import { useDispatch } from 'react-redux';
+import {
+  addToFavoriteList,
+  removeFromFavoriteList,
+} from '../../redux/favorites/slice';
 
 const CamperCard = ({
   _id,
@@ -20,8 +25,32 @@ const CamperCard = ({
   details: { kitchen, beds, airConditioner },
   showMoreClick,
 }) => {
-
+  const dispatch = useDispatch();
   const [favorite, setFavorite] = useState(false);
+
+  const handleToggleFavorite = () => {
+    if (!favorite) {
+      dispatch(
+        addToFavoriteList({
+          _id,
+          gallery,
+          name,
+          price,
+          rating,
+          reviews,
+          location,
+          adults,
+          engine,
+          transmission,
+          description,
+          details: { kitchen, beds, airConditioner },
+        })
+      );
+    } else {
+      dispatch(removeFromFavoriteList(_id));
+    }
+    setFavorite(prev => !prev);
+  };
 
   const handleShowMore = () => {
     showMoreClick(_id);
@@ -44,7 +73,7 @@ const CamperCard = ({
             <button
               type="button"
               className={`${css.favoriteBtn}`}
-              onClick={() => setFavorite(prev => !prev)}
+              onClick={handleToggleFavorite}
             >
               {!favorite ? (
                 <svg width={24} height={24}>
