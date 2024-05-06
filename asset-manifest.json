@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/camper-van-ua/static/css/main.6c4c884a.css",
-    "main.js": "/camper-van-ua/static/js/main.4816cf34.js",
+    "main.js": "/camper-van-ua/static/js/main.95b88941.js",
     "static/css/239.3bce8003.chunk.css": "/camper-van-ua/static/css/239.3bce8003.chunk.css",
     "static/js/239.eb3663a5.chunk.js": "/camper-van-ua/static/js/239.eb3663a5.chunk.js",
     "static/css/674.e5a6e52a.chunk.css": "/camper-van-ua/static/css/674.e5a6e52a.chunk.css",
@@ -10,11 +10,11 @@
     "static/js/153.2869b43e.chunk.js": "/camper-van-ua/static/js/153.2869b43e.chunk.js",
     "static/css/397.c4d2305a.chunk.css": "/camper-van-ua/static/css/397.c4d2305a.chunk.css",
     "static/js/397.20dfd90d.chunk.js": "/camper-van-ua/static/js/397.20dfd90d.chunk.js",
-    "static/js/395.b149cfc9.chunk.js": "/camper-van-ua/static/js/395.b149cfc9.chunk.js",
+    "static/js/395.50e70590.chunk.js": "/camper-van-ua/static/js/395.50e70590.chunk.js",
     "static/media/sprite.svg": "/camper-van-ua/static/media/sprite.5686478b85fbe02836d641b9e13f19ce.svg",
     "index.html": "/camper-van-ua/index.html",
     "main.6c4c884a.css.map": "/camper-van-ua/static/css/main.6c4c884a.css.map",
-    "main.4816cf34.js.map": "/camper-van-ua/static/js/main.4816cf34.js.map",
+    "main.95b88941.js.map": "/camper-van-ua/static/js/main.95b88941.js.map",
     "239.3bce8003.chunk.css.map": "/camper-van-ua/static/css/239.3bce8003.chunk.css.map",
     "239.eb3663a5.chunk.js.map": "/camper-van-ua/static/js/239.eb3663a5.chunk.js.map",
     "674.e5a6e52a.chunk.css.map": "/camper-van-ua/static/css/674.e5a6e52a.chunk.css.map",
@@ -23,10 +23,10 @@
     "153.2869b43e.chunk.js.map": "/camper-van-ua/static/js/153.2869b43e.chunk.js.map",
     "397.c4d2305a.chunk.css.map": "/camper-van-ua/static/css/397.c4d2305a.chunk.css.map",
     "397.20dfd90d.chunk.js.map": "/camper-van-ua/static/js/397.20dfd90d.chunk.js.map",
-    "395.b149cfc9.chunk.js.map": "/camper-van-ua/static/js/395.b149cfc9.chunk.js.map"
+    "395.50e70590.chunk.js.map": "/camper-van-ua/static/js/395.50e70590.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c4c884a.css",
-    "static/js/main.4816cf34.js"
+    "static/js/main.95b88941.js"
   ]
 }
