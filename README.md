@@ -8,12 +8,16 @@ our extensive collection of camper vans.
 ## Features
 
 **Homepage**: Access the homepage with ease and navigate to the catalog page to
-view available camper vans. **Catalog Page**: Browse through a list of camper
-vans available for rental. **Detailed Information**: Click on "Show more" to
-view detailed information about a camper van, including its features and an
-application form for rental. **Add to Favorites**: Like a camper van? Add it to
-your favorites for quick access later. Favorites Page: View and manage your
-favorite camper vans in the favorites page.
+view available camper vans.
+
+**Catalog Page**: Browse through a list of camper vans available for rental.
+
+**Detailed Information**: Click on "Show more" to view detailed information
+about a camper van, including its features and an application form for rental.
+
+**Add to Favorites**: Like a camper van? Add it to your favorites for quick
+access later. Favorites Page: View and manage your favorite camper vans in the
+favorites page.
 
 ## Usage
 
