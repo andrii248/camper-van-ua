@@ -12,10 +12,7 @@ const favoritesSlice = createSlice({
     addToFavoriteList: (state, { payload }) => {
       return {
         ...state,
-        favoriteItems: [
-          ...state.favoriteItems,
-          { ...payload, isFavorite: true },
-        ],
+        favoriteItems: [...state.favoriteItems, { ...payload }],
       };
     },
 

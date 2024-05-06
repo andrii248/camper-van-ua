@@ -1,14 +1,14 @@
 import formatPriceToEuro from 'helpers/formatPriceToEuro';
 import css from './CamperCard.module.css';
-import { useState } from 'react';
 import sprite from '../../images/sprite.svg';
 import CamperDetails from 'components/CamperDetails/CamperDetails';
 import Button from 'components/Button/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   addToFavoriteList,
   removeFromFavoriteList,
 } from '../../redux/favorites/slice';
+import { selectFavorites } from '../../redux/selectors';
 
 const CamperCard = ({
   _id,
@@ -26,10 +26,11 @@ const CamperCard = ({
   showMoreClick,
 }) => {
   const dispatch = useDispatch();
-  const [favorite, setFavorite] = useState(false);
+  const favorites = useSelector(selectFavorites);
+  const isFavorite = favorites.some(favorite => favorite._id === _id);
 
   const handleToggleFavorite = () => {
-    if (!favorite) {
+    if (!isFavorite) {
       dispatch(
         addToFavoriteList({
           _id,
@@ -49,7 +50,6 @@ const CamperCard = ({
     } else {
       dispatch(removeFromFavoriteList(_id));
     }
-    setFavorite(prev => !prev);
   };
 
   const handleShowMore = () => {
@@ -75,7 +75,7 @@ const CamperCard = ({
               className={`${css.favoriteBtn}`}
               onClick={handleToggleFavorite}
             >
-              {!favorite ? (
+              {!isFavorite ? (
                 <svg width={24} height={24}>
                   <use href={sprite + '#icon-heart'} />
                 </svg>
